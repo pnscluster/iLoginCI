@@ -50,7 +50,7 @@ class Register extends CI_Controller {
 		$data['picture_url'] 		=  $this->input->post('picture_url');
 		$data['register_date'] 		=  date('Y-m-d H:i:s');
 	
-		$this->Model_Register->register_data("Members", $data);
+		$this->Model_Register->register_data($data);
 	}
 	
 	/////////////////////////////////--------------------------------------------------------------------------------------------------------------
