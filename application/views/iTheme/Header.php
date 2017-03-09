@@ -12,11 +12,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	
 	<!-- CSS -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css');?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/sweetalert2/sweetalert2.css');?>">
 	
 	<!-- SCRIPT -->
 	<script src="<?php echo base_url('assets/js/jquery-3.1.1.slim.min.js');?>"></script>
 	<script src="<?php echo base_url('assets/js/tether.min.js');?>"></script>
 	<script src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
+	<script src="<?php echo base_url('assets/js/sweetalert2/sweetalert2.min.js');?>"></script>
+	<script src="<?php echo base_url('assets/js/function_main.js');?>"></script>
+	<!-- <script src="<?php echo base_url('assets/js/jqueryValidate/jquery.validate.min.js');?>"></script> -->
 	
 </head>
 <body>
@@ -28,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   	<a class="navbar-brand" href="#">iBrand</a>
   	<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
     	<div class="navbar-nav">
-	    	<a class="nav-item nav-link" href="<?php echo base_url('');?>">
+	    	<a class="nav-item nav-link" href="<?php echo base_url('Register/index');?>">
 	      		Register
 			</a>
 	      	<a class="nav-item nav-link" href="<?php echo !empty($url)?$url:'';?>">

@@ -15,8 +15,8 @@ class ThemeCI{
 	{
 		$CI =& get_instance();
 		
-		$data['url'] = $CI->facebooksdk->getLoginUrl(base_url('Facebook/callback'));
 		//### Header ###//
+		$data['url'] = $CI->facebooksdk->getLoginUrl(base_url('Facebook/callback'));
 		$CI->load->view('iTheme/Header', $data);
 		//### Body ###//
 		$CI->load->view($view, $data);
