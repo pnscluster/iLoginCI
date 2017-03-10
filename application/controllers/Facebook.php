@@ -27,7 +27,9 @@ class Facebook extends CI_Controller {
 		
 		$this->session->set_userdata('userid', $data['user']['id']);
 		
-		if($data['user']['id']){
+		$oaut_id = $this->Model_Register->check_user($data['user']['id']);
+		
+		if(!$oaut_id){
 			
 			$insert['oauth_id'] 			=  $data['user']['id'];
 			$insert['oauth_provider'] 		=  'Facebook';
@@ -35,9 +37,9 @@ class Facebook extends CI_Controller {
 			$insert['last_name'] 			=  $data['user']['last_name'];
 			$insert['email'] 				=  $data['user']['email'];
 			$insert['password'] 			=  null;
-			$insert['birthday'] 			=  $data['user']['birthday'];	//$data['user']['birthday'];
-			$insert['gender'] 				=  null;	//$data['user']['gender'];
-			$insert['picture'] 				=  null;	//$data['user']['picture'];
+			$insert['birthday'] 			=  $data['user']['birthday']?$data['user']['birthday']:null;	//$data['user']['birthday'];
+			$insert['gender'] 				=  $data['user']['gender']?$data['user']['gender']:null;
+			$insert['picture'] 				=  $data['user']['picture']?$data['user']['picture']:null;
 			$insert['register_date'] 		=  date('Y-m-d H:i:s');
 			//print_r($insert);
 			$this->Model_Register->register_data($insert);

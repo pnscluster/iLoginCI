@@ -63,6 +63,7 @@ class Facebooksdk{
 	
 			$response = $this->fb->get('/me?fields=id,name,first_name,middle_name,last_name,email,birthday');
 			$userNode = $response->getGraphUser();
+			
 			return $userNode;
 				
 		} catch(Facebook\Exceptions\FacebookResponseException $e) {
@@ -82,8 +83,25 @@ class Facebooksdk{
 	
 	function getLogoutUrl($session, $next_url)
 	{
-		$this->helper->getLogoutUrl($session, $next_url);
 		
-		//return $next_url;
+		
+		try {
+		
+			$this->helper->getLogoutUrl($session, $next_url);
+				
+			return true;
+		
+		} catch(Facebook\Exceptions\FacebookResponseException $e) {
+			// When Graph returns an error
+			echo 'Graph returned an error: ' . $e->getMessage();
+			exit;
+		
+		} catch(Facebook\Exceptions\FacebookSDKException $e) {
+		
+			// When validation fails or other local issues
+			echo 'Facebook SDK returned an error: ' . $e->getMessage();
+			exit;
+		
+		}
 	}
 }

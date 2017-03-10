@@ -36,11 +36,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </nav>
 
 <div class="jumbotron">
+	<div>
+		<?php 
+			echo "<img src='//graph.facebook.com/".$user['id']."/picture?type=large'>";
+		?>
+	</div>	
 	<h3>Hello !! <?php echo !empty($user['name'])?$user['name']:'';?></h3> 
 	<p>
 		<strong>Email: </strong>
 		<?php echo !empty($user['email'])?$user['email']:'';?>
-	</p>	
+	</p>
 </div>
 
 </body>
