@@ -15,12 +15,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/sweetalert2/sweetalert2.css');?>">
 	
 	<!-- SCRIPT -->
-	<script src="<?php echo base_url('assets/js/jquery-3.1.1.slim.min.js');?>"></script>
+	<script src="<?php echo base_url('assets/js/jquery-3.1.1.min.js');?>"></script>
 	<script src="<?php echo base_url('assets/js/tether.min.js');?>"></script>
 	<script src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
 	<script src="<?php echo base_url('assets/js/sweetalert2/sweetalert2.min.js');?>"></script>
-	<script src="<?php echo base_url('assets/js/function_main.js');?>"></script>
-	<!-- <script src="<?php echo base_url('assets/js/jqueryValidate/jquery.validate.min.js');?>"></script> -->
+	<script src="<?php echo base_url('assets/js/function_main.js');?>"></script>	
 	
 </head>
 <body>
@@ -35,12 +34,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    	<a class="nav-item nav-link" href="<?php echo base_url('Register/index');?>">
 	      		Register
 			</a>
+			<a class="nav-item nav-link" href="<?php echo base_url('Login/index');?>">
+	      		Login
+			</a>
 	      	<a class="nav-item nav-link" href="<?php echo !empty($url)?$url:'';?>">
-	      		Login with Facebook <span class="sr-only">(current)</span>
+	      		Login with Facebook
 	      	</a>
-	      	<!-- <a class="nav-item nav-link" href="<?php echo base_url('Facebook/index');?>">
-	      		Logout
-	      	</a> -->
     	</div>
   	</div>
 </nav>
