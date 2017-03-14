@@ -5,7 +5,7 @@ class Login extends CI_Controller {
 	
 	function __construct(){
 		parent::__construct();
-		$this->load->model("Model_Login");
+		$this->load->model("Login_model");
 	}
 
 	public function index()
@@ -15,7 +15,7 @@ class Login extends CI_Controller {
 	
 	public function check_login()
 	{
-		$data = $this->Model_Login->check_login($this->input->post());
+		$data = $this->Login_model->check_login($this->input->post());
 		
 		return $data;
 		

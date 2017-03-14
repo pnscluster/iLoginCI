@@ -1,23 +1,17 @@
 <?php 
-class Model_Login extends CI_Model {
+class Register_model extends CI_Model {
 	
 	function __construct(){
 		parent::__construct();
 		
 	}
 	/////////////////////////////////--------------------------------------------------------------------------------------------------------------
-	public function check_login($data)
+	public function check_user($id)
 	{
-		$query 		= $this->db->get_where("Members", array("email" => $data['Email']));
-		$result 	= $query->result_array();
-		//print_r($result); exit;
+		$query 	= $this->db->get_where("Members", array("oauth_id" => $id));
+		$row 	= $query->row_array();
 		
-		if($row['Email'] == $data['Email'] && $row['Password'] == md5($data['Password'])){
-			return $result;
-		}else{
-			return false;
-		}
-		
+		return $row;
 	}
 	
 	/////////////////////////////////--------------------------------------------------------------------------------------------------------------

@@ -5,7 +5,7 @@ class Register extends CI_Controller {
 	
 	public function __construct(){
 		parent::__construct();
-		$this->load->model("Model_Register");
+		$this->load->model("Register_model");
 	}
 	
 	/////////////////////////////////--------------------------------------------------------------------------------------------------------------
@@ -30,7 +30,7 @@ class Register extends CI_Controller {
 		$data['picture'] 			=  null;
 		$data['register_date'] 		=  date('Y-m-d H:i:s');
 		
-		$this->Model_Register->register_data($data);
+		$this->Register_model->register_data($data);
 		
 		return true;
 	}
@@ -50,7 +50,7 @@ class Register extends CI_Controller {
 		$data['picture_url'] 		=  $this->input->post('picture_url');
 		$data['register_date'] 		=  date('Y-m-d H:i:s');
 	
-		$this->Model_Register->register_data($data);
+		$this->Register_model->register_data($data);
 	}
 	
 	/////////////////////////////////--------------------------------------------------------------------------------------------------------------

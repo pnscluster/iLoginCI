@@ -6,7 +6,7 @@ class Facebook extends CI_Controller {
 	//private $fb;
 	public function __construct(){
 		parent::__construct();
-		$this->load->model("Model_Register");
+		$this->load->model("Register_model");
 		//$this->load->library('FacebookSDK');
 		//$this->fb = $this->Facebooksdk;
 	}
@@ -27,7 +27,7 @@ class Facebook extends CI_Controller {
 		
 		$this->session->set_userdata('userid', $data['user']['id']);
 		
-		$oaut_id = $this->Model_Register->check_user($data['user']['id']);
+		$oaut_id = $this->Register_model->check_user($data['user']['id']);
 		
 		if(!$oaut_id){
 			
@@ -42,7 +42,7 @@ class Facebook extends CI_Controller {
 			$insert['picture'] 				=  $data['user']['picture']?$data['user']['picture']:null;
 			$insert['register_date'] 		=  date('Y-m-d H:i:s');
 			//print_r($insert);
-			$this->Model_Register->register_data($insert);
+			$this->Register_model->register_data($insert);
 		}
 		
 		$this->load->view('Login/user_profile', $data);
