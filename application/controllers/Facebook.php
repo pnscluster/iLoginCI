@@ -35,6 +35,7 @@ class Facebook extends CI_Controller {
 			$insert['oauth_provider'] 		=  'Facebook';
 			$insert['first_name'] 			=  $data['user']['first_name'];
 			$insert['last_name'] 			=  $data['user']['last_name'];
+			$insert['name'] 				=  $data['user']['name'];
 			$insert['email'] 				=  $data['user']['email'];
 			$insert['password'] 			=  null;
 			$insert['birthday'] 			=  $data['user']['birthday']?$data['user']['birthday']:null;	//$data['user']['birthday'];
