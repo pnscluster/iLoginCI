@@ -21,6 +21,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script src="<?php echo base_url('assets/js/sweetalert2/sweetalert2.min.js');?>"></script>
 	<script src="<?php echo base_url('assets/js/function_main.js');?>"></script>	
 	
+	<style>
+		/*body {
+		    background-color: #fff;
+		}*/
+	</style>
+	
 </head>
 <body>
 
@@ -42,3 +48,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     	</div>
   	</div>
 </nav>
+
+<div class="jumbotron jumbotron-fluid">

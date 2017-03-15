@@ -56,7 +56,7 @@
 <script>
 $(function(){
 
-	//### Submit Form ###//
+	//### Login Form ###//
 	$( '#frm_login' ).on( 'submit', function ( event ) {
 		event.preventDefault();
 		//confirm('ยืนยันการเข้าสู่ระบบ ?', function(){
@@ -72,9 +72,6 @@ $(function(){
 				contentType: false,
 		        success: function(data){
 		        	window.location.reload();
-			        //console.log(data);
-		        	//alert( "เข้าสู่ระบบ", "success", "<?php echo site_url('Login/home'); ?>" );
-		        	//window.location.href = "<?php echo site_url('Login/home'); ?>";
 		        },
 	        	error: function(data, errorThrown){
 	        		alert("เข้าสู่ระบบไม่สำเร็จ","error");
@@ -83,7 +80,7 @@ $(function(){
 			});	//-- Ajax.
 		//});	//-- Confirm
 		
-	});	//-- Submit Form.
+	});	//-- Login Form.
 
 });
 		
