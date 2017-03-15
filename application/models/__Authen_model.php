@@ -1,5 +1,5 @@
 <?php 
-class Authen_model extends CI_Model {
+class __Authen_model extends CI_Model {
 
     function __construct()
     {
@@ -8,11 +8,12 @@ class Authen_model extends CI_Model {
     
     function _check_login($data){
 		$this->db->select('*')->from('Members')
-			->where('email',$data['email'])
-			->where('password',md5($data['password']));
+			->where('email', $data['Email'])
+			->where('password', md5($data['Password']));
 		$query=$this->db->get();
-		if($query->num_rows()>0){
-			$rs=$query->row_array();
+		$num_rows=$query->num_rows();
+		$rs=$query->row_array();
+		if($num_rows>0){
 			//Set session
 			$ses['user_id']		= $rs['email'];
 			$ses['user_name']	= $rs['name'];

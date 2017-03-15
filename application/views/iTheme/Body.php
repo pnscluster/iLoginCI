@@ -5,6 +5,8 @@
 		<!-- ////////////////////////////////// -->
 			<?php 
 				echo !empty($first_name)?$first_name:'';
+				echo "<br>";
+				echo !empty($username)?$username:'';
 			?>
 		<!-- ////////////////////////////////// -->
 		</div>

@@ -31,15 +31,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   	<a class="navbar-brand" href="#">iBrand</a>
   	<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
     	<div class="navbar-nav">
-	    	<a class="nav-item nav-link" href="<?php echo base_url('Register/index');?>">
-	      		Register
-			</a>
-			<a class="nav-item nav-link" href="<?php echo base_url('Login/index');?>">
-	      		Login
-			</a>
-	      	<a class="nav-item nav-link" href="<?php echo !empty($url)?$url:'';?>">
-	      		Login with Facebook
-	      	</a>
+	    	<?php if(empty($user_id)){ ?>
+	    	<a class="nav-item nav-link" href="<?php echo base_url('Register/index');?>">Register</a>
+			<a class="nav-item nav-link" href="<?php echo base_url('Login/login');?>">Login</a>
+	      	<a class="nav-item nav-link" href="<?php echo !empty($url)?$url:'';?>">Login with Facebook</a>
+	      	<?php }else{ ?>
+	      	<i class="nav-item nav-link"><?php echo !empty($username)?$username:'';?></i>
+	      	<a class="nav-item nav-link" href="<?php echo base_url('Login/logout');?>">Logout</a>
+			<?php } ?>
     	</div>
   	</div>
 </nav>

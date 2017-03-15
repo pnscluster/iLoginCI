@@ -24,6 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://localhost:81/iLoginCI/';
+$config['method_not_login']	= array('Login/index', 'Authen/check_login');		// Controller/Method ที่ไม่เช็ค Session
 
 /*
 |--------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 
 <div class="container" style="margin-top: 15px;">
 	
-	<?php echo form_open("Login/login", array('id' => 'frm_login'));?>
+	<?php echo form_open("Authen/check_login", array('id' => 'frm_login'));?>
 		<div class="row center">
 			<div class="col-md-4">
 				<h2 class="form-signin-heading">Please sign in</h2>
@@ -60,18 +60,19 @@ $(function(){
 	$( '#frm_login' ).on( 'submit', function ( event ) {
 		event.preventDefault();
 		//confirm('ยืนยันการเข้าสู่ระบบ ?', function(){
-			var url = "<?php echo site_url('Login/login'); ?>";
+			var url = "<?php echo site_url('Login/check_login'); ?>";
 			$.ajax({
 				type: "POST",
 				url: url,
 				data: new FormData($("#frm_login")[0]),	// $("#frm_item").serialize(),
 				//enctype: 'multipart/form-data',
-		        dataType:'html',
+		        dataType:'json',
 		        cache: false,
 		        processData: false,
 				contentType: false,
 		        success: function(data){
-			        console.log(data);
+		        	window.location.reload();
+			        //console.log(data);
 		        	//alert( "เข้าสู่ระบบ", "success", "<?php echo site_url('Login/home'); ?>" );
 		        	//window.location.href = "<?php echo site_url('Login/home'); ?>";
 		        },

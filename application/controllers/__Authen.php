@@ -1,13 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Authen extends CI_Controller {
+class __Authen extends CI_Controller {
  function __construct()
    {
 		parent::__construct();
 		//---------------------------------------------------------------------------------
-		$this->theme->is_logged_in(); //Check Login
+		$this->themeci->is_logged_in(); //Check Login
 		
-		$this->load->model("Authen/Authen_model");
+		$this->load->model("Authen_model");
    }
    
    public function index(){
@@ -38,12 +38,12 @@ class Authen extends CI_Controller {
 	public function application(){
 		$data['username']  = $this->session->userdata('user_name'); 
 		//### Header ###//
-		$data['url'] = $CI->facebooksdk->getLoginUrl(base_url('Facebook/callback'));
-		$CI->load->view('iTheme/Header', $data);
+		$data['url'] = $this->facebooksdk->getLoginUrl(base_url('Facebook/callback'));
+		$this->load->view('iTheme/Header', $data);
 		//### Body ###//
-		$CI->load->view('iTheme/Body');
+		$this->load->view('iTheme/Body');
 		//### Footer ###//
-		$CI->load->view('iTheme/Footer');
+		$this->load->view('iTheme/Footer');
 	}
 		
 }// END Classs
